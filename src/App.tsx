@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Login } from './routes/Login';
 import { Register } from './routes/Register';
-import { Dashboard } from './routes/DashBoard';
+import { Dashboard } from './routes/Dashboard';
 import { useAtom } from 'jotai';
 import { userAtom } from './atoms/auth';
 import { useEffect, useState } from 'react';
