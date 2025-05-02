@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import Login from './routes/Login';
-import Register from './routes/Register';
-import Dashboard from './routes/DashBoard';
+import { Login } from './routes/Login';
+import { Register } from './routes/Register';
+import { Dashboard } from './routes/DashBoard';
 import { useAtom } from 'jotai';
 import { userAtom } from './atoms/auth';
 import { useEffect, useState } from 'react';
@@ -22,24 +22,24 @@ const App = () => {
   // // アプリ起動時にセッションを復元
   useEffect(() => {
     const restoreSession = async () => {
-      console.log("🌀 セッション確認開始...")
-  
-      const { data, error } = await supabase.auth.getUser()
-      console.log("✅ getUser 結果:", { data, error })
-  
+      console.log('🌀 セッション確認開始...');
+
+      const { data, error } = await supabase.auth.getUser();
+      console.log('✅ getUser 結果:', { data, error });
+
       if (data?.user) {
-        console.log("👤 ユーザー検出:", data.user)
-        setUser(data.user)
+        console.log('👤 ユーザー検出:', data.user);
+        setUser(data.user);
       } else {
-        console.log("⚠️ ユーザーなし")
+        console.log('⚠️ ユーザーなし');
       }
-  
-      setIsLoading(false) // ここが実行されないとLoadingのままになる
-    }
-  
-    restoreSession()
-  }, [])
-  
+
+      setIsLoading(false); // ここが実行されないとLoadingのままになる
+    };
+
+    restoreSession();
+  }, []);
+
   if (isLoading)
     return (
       <div className="h-screen w-screen flex justify-center items-center">

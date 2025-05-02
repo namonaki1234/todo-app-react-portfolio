@@ -6,7 +6,7 @@ import { fetchTasks } from '../api/tasks'
 import TaskForm from '../components/TaskForm'
 import TaskList from '../components/TaskList'
 
-const Dashboard = () => {
+export const Dashboard = () => {
   const [user] = useAtom(userAtom)
   const [, setTasks] = useAtom(tasksAtom)
 
@@ -27,4 +27,4 @@ const Dashboard = () => {
   )
 }
 
-export default Dashboard
+

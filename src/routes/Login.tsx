@@ -5,7 +5,7 @@ import { supabase } from '../supabase/client';
 import { userAtom } from '../atoms/auth';
 import { Link } from 'react-router-dom';
 
-const Login = () => {
+export const Login = () => {
   const [, setUser] = useAtom(userAtom);
   const navigate = useNavigate();
 
@@ -61,4 +61,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+
