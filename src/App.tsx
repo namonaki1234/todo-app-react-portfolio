@@ -10,28 +10,21 @@ import { supabase } from './supabase/client';
 const App = () => {
   const [user, setUser] = useAtom(userAtom);
 
-  // useEffect(() => {
-  //   supabase.auth.getUser().then(({ data }) => {
-  //     if (data?.user) setUser(data.user)
-  //   })
-  //   setIsLoading(false)
-  // }, [])
-
   const [isLoading, setIsLoading] = useState(true);
 
   // // アプリ起動時にセッションを復元
   useEffect(() => {
     const restoreSession = async () => {
-      console.log('🌀 セッション確認開始...');
+      // console.log('🌀 セッション確認開始...');
 
       const { data, error } = await supabase.auth.getUser();
-      console.log('✅ getUser 結果:', { data, error });
+      // console.log('✅ getUser 結果:', { data, error });
 
       if (data?.user) {
-        console.log('👤 ユーザー検出:', data.user);
+        // console.log('👤 ユーザー検出:', data.user);
         setUser(data.user);
       } else {
-        console.log('⚠️ ユーザーなし');
+        // console.log('⚠️ ユーザーなし');
       }
 
       setIsLoading(false); // ここが実行されないとLoadingのままになる

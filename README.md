@@ -1,54 +1,33 @@
-# React + TypeScript + Vite
+# 🚀 React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📁 プロジェクト構成 - `todo-app-react-portfolio`
 
-Currently, two official plugins are available:
+本アプリは、**React + Vite + Supabase** をベースにした ToDo アプリケーションです。  
+**Jotai** による状態管理と **Tailwind CSS / ShadCN UI** によるモダンな UI を実装しています。
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 📂 ディレクトリ構成
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+<!-- <details> -->
+<!-- <summary>展開して表示</summary> -->
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+```plaintext
+todo-app-react-portfolio/
+├── node_modules/            # 各種依存ライブラリ（自動生成）
+├── public/                  # 静的ファイル（faviconなど）
+├── src/                     # アプリのソースコード本体
+│   ├── api/                 # API操作に関する関数（fetchやSupabase操作）
+│   ├── atoms/               # Jotai によるグローバルステート管理ファイル
+│   ├── components/          # 再利用可能なUI部品
+│   │   └── ui/              # ShadCNベースのUIコンポーネント（Buttonなど）
+│   ├── lib/                 # 補助的な関数・ユーティリティ
+│   ├── routes/              # react-router-domによる画面構成とページコンポーネント
+│   ├── supabase/            # Supabase クライアントの初期化設定など
+│   └── types/               # TypeScript用の型定義ファイル
+├── vite.config.ts           # Viteの設定ファイル
+├── tailwind.config.ts       # Tailwind CSSのカスタマイズ設定
+├── tsconfig.json            # TypeScriptの設定
+├── .eslintrc.cjs            # ESLintのルール設定
+├── .prettierrc              # Prettierのフォーマット設定
+└── README.md                # 本ファイル（プロジェクト概要）
