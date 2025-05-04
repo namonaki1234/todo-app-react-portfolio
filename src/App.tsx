@@ -17,7 +17,7 @@ const App = () => {
     const restoreSession = async () => {
       // console.log('🌀 セッション確認開始...');
 
-      const { data, error } = await supabase.auth.getUser();
+      const { data} = await supabase.auth.getUser();
       // console.log('✅ getUser 結果:', { data, error });
 
       if (data?.user) {

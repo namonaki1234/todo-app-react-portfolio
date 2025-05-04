@@ -2,12 +2,12 @@
 import { Button } from '@/components/ui/button';
 import { LogOut } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { useSetAtom } from 'jotai';
-import { filterAtom } from '@/atoms/filter';
+// import { useSetAtom } from 'jotai';
+// import { filterAtom } from '@/atoms/filter';
 
 export const LogoutButton = () => {
   const navigate = useNavigate();
-  const setFilter = useSetAtom(filterAtom);
+  // const setFilter = useSetAtom(filterAtom);
 
   const handleLogout = () => {
     // Supabaseログアウト処理など
